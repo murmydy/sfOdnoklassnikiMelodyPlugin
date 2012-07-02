@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author "Vladimir Reznichenko <kalessil@gmail.com>"
+ */
+
 class sfOdnoklassnikiMelody extends sfMelody2
 {
     private $privateSecret = '';
