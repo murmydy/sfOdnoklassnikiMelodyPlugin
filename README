@@ -4,7 +4,6 @@ sfOdnoklassnikiMelodyPlugin
 Odnoklassniki OAuth2 implementation for sfMelodyPlugin
 
 Kick-start code runnig ob PHP 5.3 (Not tested lower versions).
-Couple stupid code pieces are service OAuth2 server bugs workaround.
 Allows to authorize user and import profile data as local user.
 
 
