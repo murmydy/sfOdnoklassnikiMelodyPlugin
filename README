@@ -40,3 +40,6 @@ New BSD
           path:      uid
           key:       false
           prefix:    "http://www.odnoklassniki.ru/profile/"
+
+
+PS: inspired by http://habrahabr.ru/post/145988/
