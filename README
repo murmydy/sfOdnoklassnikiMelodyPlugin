@@ -5,6 +5,7 @@ Odnoklassniki OAuth2 implementation for sfMelodyPlugin
 
 Kick-start code runnig ob PHP 5.3 (Not tested lower versions).
 Couple stupid code pieces are service OAuth2 server bugs workaround.
+Allows to authorize user and import profile data as local user.
 
 
 === License ===
@@ -26,3 +27,17 @@ New BSD
           path:      uid
           prefix:    odnoklassniki_
           key:       true
+        email:
+          call:      me
+          path:      uid
+          prefix:    odnoklassniki_
+          key:       false
+        picture:
+          call:      me
+          path:      pic_2
+          key:       false
+        link:
+          call:      me
+          path:      uid
+          key:       false
+          prefix:    "http://www.odnoklassniki.ru/profile/"

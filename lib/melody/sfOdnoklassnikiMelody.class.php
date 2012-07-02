@@ -47,8 +47,13 @@ class sfOdnoklassnikiMelody extends sfMelody2
             $error = sprintf('{OAuth} access token failed - %s returns %s', $this->getName(), print_r($params, true));
             sfContext::getInstance()->getLogger()->err($error);
         } else {
-            $sig = md5("application_key={$this->getKey()}method=users.getCurrentUser" . md5($access_token . $this->privateSecret));
-            $this->setAlias('me', 'fb.do?method=users.getCurrentUser&sig=' . $sig . '&application_key=' . $this->getKey());
+            $meParams = array(
+                'application_key' => $this->getSecret(),
+                'method'          => 'users.getCurrentUser'
+            );
+
+            $sig = md5(http_build_query($meParams, '', ''). md5($access_token . $this->privateSecret));
+            $this->setAlias('me', 'fb.do?' . http_build_query($meParams, '', '&') . '&sig=' . $sig );
         }
 
         $token = new Token();
